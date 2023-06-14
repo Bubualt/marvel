@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+  height: 500px;
+  overflow: hidden;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.box:nth-child(1) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.box:nth-child(2) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.box:nth-child(3) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.box:nth-child(4) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.box:nth-child(5) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(360deg);
+}
+
+.box:nth-child(6) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(450deg);
+}
+
+.box:nth-child(7) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(540deg);
+}
+
+.box:nth-child(8) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(630deg);
+}
+
+.box:nth-child(9) {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(720deg);
+}
+
+.box.active {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">wfawf</div>
+        <div class="box">gvvge</div>
+        <div class="box">feef</div>
+        <div class="box">ffe</div>
+        <div class="box">efef</div>
+        <div class="box">fefef</div>
+        <div class="box">fegfe</div>
+        <div class="box">gegehg</div>
+        <div class="box">wgwgw</div>
+      </div>
+    
+      <script>
+        const boxes = document.querySelectorAll('.box');
+let index = 0;
+
+function scroll() {
+  boxes[index].classList.remove('active');
+  index = (index + 1) % boxes.length;
+  boxes[index].classList.add('active');
+}
+
+setInterval(scroll, 2000);
+      </script>
+</body>
+</html>

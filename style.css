@@ -1,0 +1,646 @@
+body {
+    font-family: 'Inconsolata';
+    font-size: 5vmin;
+    line-height: 6.5vmin;
+    margin: 0;
+    background-color: black;
+    scroll-behavior: smooth;
+    
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+
+
+
+*,
+*:after,
+*:before,
+html
+	{box-sizing:border-box}
+
+a
+	{display:block;text-decoration:none}
+
+body
+	{background:#262626;text-align:center}
+
+body,
+button
+	{font-family:Tahoma,Geneva,sans-serif;font-style:normal;font-weight:400}
+
+body,
+html
+	{height:100%}
+
+body,
+h1,
+p
+	{margin:0;padding:0}
+
+button{
+	margin:0;
+	border:none;
+	outline:none;
+	cursor:pointer
+	}
+
+button:focus
+	{background:#80808000;color:#000}
+
+button,
+p,
+.home
+	{font-size:14px}
+
+button,
+.home{
+	background:transparent;
+	padding:14px;
+	color:#a3a3a3;
+	vertical-align:middle
+	}
+
+button:hover,
+.home:hover
+	{background:#ff000023;color:#fff}
+
+h1,
+h2
+	{font-size:30px}
+
+[class*="container"]
+	{display:block;position:relative;float:left}
+
+[class*="content"]
+	{display:none;position:absolute;z-index:10}
+
+.home,
+#btnMenu
+	{position:relative;float:left}
+
+#btnMenu,
+.fa-close,
+.acc
+	{display:none}
+
+.content_list:before,
+h2:before,
+h2:after
+	{content:"";display:block;position:absolute}
+
+header{
+	width:100%;
+	padding:16px;
+	display:block;
+	position:absolute;
+	z-index:10;
+	box-shadow:0 8px 6px -6px #000
+	}
+
+header h1,
+header p
+	{letter-spacing:5px;text-shadow:-1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff}
+
+#sticky_nav{
+	background:#000000;
+	width:100%;
+	top:-45px;
+	display:block;
+	position:fixed;
+	z-index:999;
+	transition:all .5s ease
+	}
+
+.btnList
+	{width:120px}
+
+.content_list
+	{background:#353535;width:250px;top:45px}
+
+.content_list.left,
+.content_list.left:before
+	{left:0}
+
+.content_list.center
+	{left:-65px}
+
+.content_list.center:before
+	{left:50%;transform:translate(-50%,0)}
+
+.content_list.right,
+.content_list.right:before
+	{right:0}
+
+.content_list:before{
+	width:8px;
+	top:-8px;
+	border-left:8px solid transparent;
+	border-right:8px solid transparent;
+	border-bottom:8px solid #0077ff
+	}
+
+.container_right
+	{float:right}
+
+.content_search
+	{background:#000000;top:0;right:40px}
+
+input[type=text]{
+	background:#fff;
+	width:100%;
+	font-size:22px;
+	border-radius:5px
+	}
+
+input[type=text]:focus
+	{outline:none}
+
+@media (max-width:683px){
+	#btnMenu
+		{display:block}
+	
+	.container_menu
+		{display:none}
+	
+	.container_list
+		{width:100%}
+	
+	.btnList
+		{width:100%;box-shadow:0 2px 2px -2px #ff0000}
+	
+	.drop
+		{display:none}
+	
+	.acc
+		{display:inline-block}
+	
+	.content_list{
+		width:100%;
+		top:0;
+		position:relative;
+		float:left
+		}
+	
+	.content_list.left,
+	.content_list.center,
+	.content_list.right
+		{left:0;right:0}
+	
+	.content_list.left:before,
+	.content_list.center:before,
+	.content_list.right:before
+		{left:50%;transform:translate(-50%,0)}
+	
+	/* In small screen, when the "Button Nav" clicked, the "container_menu" will be replaced with the "show_menu" */
+	
+	.show_menu{
+		background:#111111;
+		width:100%;
+		top:45px;
+		display:block;
+		position:absolute
+		}
+	}
+
+.title,
+.blank{
+	width:100%;
+	min-height:100%;
+	display:block;
+	position:relative;
+	float:left
+	}
+
+h2{
+	width:100%;
+	top:50%;
+	left:0;
+	margin:0;
+	padding:0 8px;
+	display:block;
+	position:absolute;
+	color:#fff;
+	transform:translate(0,-50%)
+	}
+
+h2:before,
+h2:after{
+	width:50px;
+	height:50px;
+	left:50%;
+	border-right:1px solid #fff;
+	border-bottom:1px solid #fff;
+	animation:buble 1s linear infinite alternate
+	}
+
+h2:before
+	{bottom:-100px}
+
+h2:after
+	{bottom:-110px}
+
+@keyframes buble{
+	from{transform:rotate(45deg) translate(-50%,0) scale(.8,.8)}
+	to{transform:rotate(45deg) translate(-50%,0) scale(1,1)}
+	}
+
+.blank
+	{background:#111}
+
+/*
+When the "Button Nav" & "Button Search" clicked, icon menu will be toggle to "visible" & "hidden".
+When the "Button Search" clicked, the "content_search" will be replaced with the "show_search".
+When the "Button List" clicked, the "content_list" will be replaced with the "show_list".
+*/
+
+.visible
+	{display:inline-block}
+
+.hidden
+	{display:none}
+
+[class*="show"]
+	{display:block}
+
+.show_list
+	{padding:20px 0;animation:height 1s ease}
+
+@keyframes height{
+	from{padding:0;opacity:0}
+	to{padding:20px 0;opacity:1}
+	}
+
+.show_search form
+	{width:150px;padding:6px;animation:width 1s ease}
+
+@keyframes width{
+	from{width:0;opacity:0}
+	to{width:150px;opacity:1}
+	}
+
+
+/* This Is Not Part Of Responsive Slide Down A Sticky Navbar On Scroll */
+.me{
+	background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1735448/profile/profile-80.jpg?1528976396")no-repeat center / contain;
+	width:40px;
+	height:40px;
+	bottom:16px;
+	right:16px;
+	position:fixed;
+	border-radius:50%;
+	z-index:999;
+	animation:me 2s linear infinite alternate
+	}
+
+@keyframes me{
+	from{transform:translateY(-4px)}
+	to{transform:translateY(4px)}
+	}
+
+.me:hover span
+	{right:50px;opacity:1;visibility:visible}
+
+.me span{
+	width:150px;
+	top:10px;
+	right:0;
+	display:block;
+	position:absolute;
+	color:#008080;
+	font-size:16px;
+	z-index:-1;
+	opacity:0;
+	visibility:hidden;
+	transition:all .5s ease
+	}
+  .image {
+    background-image: url('https://images.hdqwalls.com/download/marvel-heroes-4k-art-y9-1920x1080.jpg');
+    background-size: cover;
+    height: 100vmin;
+    position: absolute;
+    width: 100%;
+  }
+  svg {
+    height: 150vmin;
+    left: calc(50% - 75vmin);
+    position: absolute;
+    width: 150vmin;
+  }
+  .text {
+    margin-top: 108vmin;
+    left: calc(50% - 75vmin);
+    position: absolute;
+    width: 150vmin;
+  }
+  
+  @media only screen and (max-width: 1650px) {
+    svg {
+      width: 100vmin;
+      left: 25%;
+	  margin-top: -10%;
+    }
+  }
+  @media only screen and (max-width: 1550px) {
+    svg {
+      width: 100vmin;
+      left: 20%;
+    }
+  }
+  @media only screen and (max-width: 1300px) {
+    svg {
+      width: 100vmin;
+      left: 15%;
+	  margin-top: -15%;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    svg {
+      width: 80vmin;
+      left: 20%;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    svg {
+      width: 80vmin;
+      left: 15%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    svg {
+      width: 60vmin;
+      left: 20%;
+      margin-top: -30%;
+    }
+  }
+  @media only screen and (max-width: 1920px) {
+    svg {
+      top: 15%;
+    }
+  }
+
+  @media only screen and (max-width: 1500px) {
+    #cigany {
+      margin-top: 90%;
+    }
+  }
+  @media only screen and (max-width: 1350px) {
+    #cigany {
+      margin-top: 100%;
+    }
+  }
+  @media only screen and (max-width: 1200px) {
+    #cigany {
+      margin-top: 110%;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
+    #cigany {
+      margin-top: 130%;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    #cigany {
+      margin-top: 450%;
+    }
+  }
+  @media only screen and (max-width: 970px) {
+    #cigany {
+      margin-top: 480%;
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    #cigany {
+      margin-top: 500%;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #cigany {
+      margin-top: 750%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #cigany {
+      margin-top: 800%;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    #d2 {
+      margin-top: 150%;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    #d3 {
+      margin-top: 210%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    #d2 {
+      margin-top: 160%;
+    }
+  }
+  @media only screen and (max-width: 900px) {
+    #d3 {
+      margin-top: 200%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    #d2 {
+      margin-top: 190%;
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    #d3 {
+      margin-top: 230%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    #d2 {
+      margin-top: 200%;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    #d3 {
+      margin-top: 240%;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #d2 {
+      margin-top: 280%;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #d3 {
+      margin-top: 320%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #d2 {
+      margin-top: 250%;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #d3 {
+      margin-top: 290%;
+    }
+  }
+  #div1{
+  background-color: black;
+  height: 220vh;
+  width: 100%;
+  margin-top: 40%;
+  }
+  
+  #myDiv {
+    display: block;
+    transition: opacity 0.5s;
+    opacity: 1;
+  }
+  
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  #heros{
+  
+  font-size: 50px;
+  }
+  
+  #center{
+  text-align: center;
+
+  }
+  .col-sm{
+    height: 600px;
+
+    border: solid red 1px;
+    border-radius: 1px;
+    
+    color: white;
+
+  }
+  .col-sm img{
+  
+  width: 100%;
+  }
+  .col-sm:hover{
+    height: 600px;
+    border: solid red 1px;
+    border-radius: 1px;
+    background-color: brown;
+    color: white;
+    
+    
+  }
+  .row{
+text-align: center;
+    grid-gap: 25px;
+  
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Asap&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Asap", sans-serif;
+}
+body{
+  background: #000000;
+}
+section{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-child(1){
+  color: #e0ffff;
+  }
+section:nth-child(2){
+  color: #ff0000;
+  background: #000000;
+} 
+section:nth-child(3){
+  color: #e0ffff;
+}
+section:nth-child(4){
+  color: #ff0000;
+  background: #ffffff;
+}
+section .container{
+  margin: 100px;
+}
+section h1{
+  font-size: 3rem;
+  margin: 20px;
+}
+section h2{
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+}
+section .text-container{
+   display: flex;
+}
+.text-box{
+color: #ff0000;
+transition: 200ms;
+}
+.text-box:hover{
+transition: 200ms;
+color: black;
+}
+section .text-container .text-box{
+  margin: 20px;
+  padding: 20px;
+  background: #030303;
+}
+section .text-container .text-box:hover{
+background-color: #b42222;
+transition: 1000ms;
+border-radius: 20px;
+
+}
+section .text-container .text-box h3{
+  font-size: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1000px){
+  section h1{
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  
+  section .text-container{
+    flex-direction: column;
+  }
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+.text-container{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+#lentebb{
+margin-top: 80%;
+}

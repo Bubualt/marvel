@@ -1,0 +1,166 @@
+body{
+  margin: 0;
+  background-color: #691107;
+  }
+  #kezdes{
+  background-image: url("marvel.png");
+  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 120vh;
+    display: flex;
+  }
+  #cim{
+  margin-top: -30%;
+  text-align: center;
+  color: white;
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-shadow: 20px 5px 20px rgb(187, 15, 15);
+
+
+  }
+  .container {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 1000px;
+  }
+  
+  .carousel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    animation: rotate360 60s infinite forwards linear;
+  }
+  .carousel__face { 
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0,0,0,0.5);
+    display: flex;
+    color: white;
+    font-size: 18px;
+font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  span {
+    margin: auto;
+  }
+  .typewrite{
+  font-size: 150px;
+  }
+  #div1{
+  width: 100%;
+  height: 50vh;
+  background-color: #691107;
+  }
+  
+  
+  .carousel__face:nth-child(1) {
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2021/02/wanda.jpg?fit=bounds&width=1280&height=720");
+    transform: rotateY(  0deg) translateZ(430px); }
+  .carousel__face:nth-child(2) { 
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2021/02/gamora.jpg?fit=bounds&width=1280&height=720");
+      transform: rotateY( 40deg) translateZ(430px); }
+  .carousel__face:nth-child(3) {
+    filter: brightness(1);
+    background-image: url("https://assets-prd.ignimgs.com/2022/05/12/doctorstrange-1652395049703.jpg?fit=bounds&width=1280&height=720");
+    transform: rotateY( 80deg) translateZ(430px); }
+  .carousel__face:nth-child(4) {
+    filter: brightness(1);
+    background-image: url("https://assets-prd.ignimgs.com/2022/05/12/wong-1652395049704.jpg?fit=bounds&width=1280&height=720");
+    transform: rotateY(120deg) translateZ(430px); }
+  .carousel__face:nth-child(5) { 
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2020/12/antman-falcon.jpg?fit=bounds&width=1280&height=720");
+   transform: rotateY(160deg) translateZ(430px); }
+  .carousel__face:nth-child(6) { 
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2021/02/hulk.jpg?fit=bounds&width=1280&height=720");
+   transform: rotateY(200deg) translateZ(430px); }
+  .carousel__face:nth-child(7) { 
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2020/12/spider-man_main-1280x720.jpg?fit=bounds&width=1280&height=720");
+   transform: rotateY(240deg) translateZ(430px); }
+  .carousel__face:nth-child(8) {
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2020/12/173-1730826_thor-ragnarok-wallpaper-marvel-cinematic-universe-thor-ragnarok.jpg?fit=bounds&width=1280&height=720");
+    transform: rotateY(280deg) translateZ(430px); }
+  .carousel__face:nth-child(9) {
+    filter: brightness(1);
+    background-image: url("https://oyster.ignimgs.com/wordpress/stg.ign.com/2020/12/the-evolution-of-iron-man-in-the-mcu.jpg?fit=bounds&width=1280&height=720");
+    transform: rotateY(320deg) translateZ(430px); }
+  
+  
+  
+  @keyframes rotate360 {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  @media only screen and (max-width: 1250px) {
+    #div1{
+      display: none;
+
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .typewrite{
+      font-size: 100px;
+
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    #cim{
+
+      margin-top: -40%;
+
+    }
+  }
+  @media only screen and (max-width: 700px) {
+    #cim{
+
+      margin-top: -60%;
+
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .typewrite{
+      font-size: 70px;
+      margin-top: -80%;
+
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    #cim{
+
+      margin-top: -80%;
+
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    #cim{
+
+      margin-top: -90%;
+
+    }
+  }
+  @media only screen and (max-width: 300px) {
+    #cim{
+
+      margin-top: -100%;
+
+    }
+  }
+  
